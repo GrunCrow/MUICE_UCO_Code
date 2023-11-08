@@ -1,0 +1,13 @@
+* 1.0
+- Versión inicial desde la version 1.5 de master.
+
+* 1.6
+- Añadido README.md
+- Añadidos common_code/test_common_code.
+- Actualizado al curso 23-24.
+* 1.7
+- Fixed bug in test for fsiv_find_min_max_loc_1. It was used Point(y,x) when it must be Point(x,y).
+* 1.8
+- Add main program to show extremes.
+- Rename esqueleto.cpp as boilerplate.cpp
+
