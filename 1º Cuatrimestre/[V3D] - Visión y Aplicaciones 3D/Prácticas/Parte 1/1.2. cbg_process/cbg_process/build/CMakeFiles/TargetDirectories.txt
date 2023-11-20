@@ -1,0 +1,4 @@
+/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/build/CMakeFiles/cbg_process.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/build/CMakeFiles/cbg_process_test_common_code.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/build/CMakeFiles/edit_cache.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/build/CMakeFiles/rebuild_cache.dir

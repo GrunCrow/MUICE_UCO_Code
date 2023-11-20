@@ -1,0 +1,25 @@
+==============================================================================================================================
+                                            Práctica 2: Contraste, Brillo, Gama
+                                                Alba Márquez-Rodríguez
+==============================================================================================================================
+
+IMPORTANTE: Para usar la aplicación CLI y modo interactivo hay que ejecutar: unset GTK_PATH
+
+Partes de la práctica realizadas:
+- fsiv_convert_image_byte_to_float
+- fsiv_convert_image_float_to_byte
+- fsiv_convert_bgr_to_hsv
+- fsiv_convert_hsv_to_bgr
+- fsiv_cbg_process (only_luma=false)
+- fsiv_cbg_process (only_luma=true)
+- Aplicación solo CLI
+- Modo interactivo (-i)
+
+Partes de la práctica no realizadas:
+
+Comandos:
+unset GTK_PATH
+./cbg_process -c=2.0 -b=-0.3 ../data/ciclista_original.jpg ../data/output_image.jpg
+./cbg_process -i ../data/ciclista_original.jpg ../data/output_image.jpg
+
+Enlace del vídeo: https://www.youtube.com/watch?v=z8tIs4ayEA8

@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/cbg_process.dir/cbg_process.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/cbg_process.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/cbg_process.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/cbg_process.dir/common_code.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/common_code.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/common_code.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/cbg_process_test_common_code.dir/test_common_code.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/test_common_code.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/test_common_code.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/cbg_process_test_common_code.dir/common_code.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/common_code.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.2. cbg_process/cbg_process/common_code.cpp"
+}
+]
