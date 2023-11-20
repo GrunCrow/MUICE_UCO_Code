@@ -1,0 +1,7 @@
+/home/osboxes/Desktop/V3D/fsiv_tutorial_opencv/build/CMakeFiles/show_extremes.dir
+/home/osboxes/Desktop/V3D/fsiv_tutorial_opencv/build/CMakeFiles/show_img.dir
+/home/osboxes/Desktop/V3D/fsiv_tutorial_opencv/build/CMakeFiles/show_video.dir
+/home/osboxes/Desktop/V3D/fsiv_tutorial_opencv/build/CMakeFiles/comp_stats.dir
+/home/osboxes/Desktop/V3D/fsiv_tutorial_opencv/build/CMakeFiles/test_common_code.dir
+/home/osboxes/Desktop/V3D/fsiv_tutorial_opencv/build/CMakeFiles/edit_cache.dir
+/home/osboxes/Desktop/V3D/fsiv_tutorial_opencv/build/CMakeFiles/rebuild_cache.dir
