@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/calibration.dir/calibration.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/calibration.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/calibration.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/video_example.dir/video_example.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/video_example.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/video_example.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/augReal.dir/augReal.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/augReal.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/augReal.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/augRealExtra.dir/augRealExtra.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/augRealExtra.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/augRealExtra.cpp"
+}
+]

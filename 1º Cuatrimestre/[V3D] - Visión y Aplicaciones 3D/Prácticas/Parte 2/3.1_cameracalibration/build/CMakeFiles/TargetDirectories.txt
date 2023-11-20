@@ -1,0 +1,6 @@
+/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build/CMakeFiles/calibration.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build/CMakeFiles/video_example.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build/CMakeFiles/augReal.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build/CMakeFiles/augRealExtra.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build/CMakeFiles/edit_cache.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 2/3.1_cameracalibration/build/CMakeFiles/rebuild_cache.dir
