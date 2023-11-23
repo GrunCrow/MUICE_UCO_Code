@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/color_balance.dir/color_balance.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/color_balance.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/color_balance.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/color_balance.dir/common_code.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/common_code.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/common_code.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/test_common_code.dir/test_common_code.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/test_common_code.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/test_common_code.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/test_common_code.dir/common_code.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/common_code.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/common_code.cpp"
+}
+]

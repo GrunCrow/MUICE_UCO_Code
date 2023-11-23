@@ -1,0 +1,4 @@
+/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/build/CMakeFiles/color_balance.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/build/CMakeFiles/test_common_code.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/build/CMakeFiles/edit_cache.dir
+/home/osboxes/Desktop/V3D/Prácticas/Parte 1/1.3. color_balance/build/CMakeFiles/rebuild_cache.dir

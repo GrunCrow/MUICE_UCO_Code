@@ -1,0 +1,22 @@
+==============================================================================================================================
+                                            Práctica 3: Balance de Color
+                                                Alba Márquez-Rodríguez
+==============================================================================================================================
+
+Partes de la práctica realizadas:
+- fsiv_color_rescaling
+- fsiv_wp_color_balance
+- fsiv_gw_color_balance
+- fsiv_color_balance
+- El código ofrece una GUI que permite trabajar de forma interactiva todas las opciones. También permite 
+seleccionar con el ratón en un punto de la imagen original y hacer que su color sea el nuevo “blanco”.
+
+Partes de la práctica no realizadas:
+
+
+Comandos:
+unset GTK_PATH
+build/color_balance -p=50  data/paisaje-neutro.jpg output.jpg
+build/color_balance -i data/paisaje-neutro.jpg output.jpg
+
+Enlace del vídeo: https://www.youtube.com/watch?v=gYXuM6xfMsw
