@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/usm_enhance.dir/usm_enhance.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/usm_enhance.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/usm_enhance.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/usm_enhance.dir/common_code.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/common_code.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/common_code.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/usm_enhance_test_common_code.dir/test_common_code.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/test_common_code.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/test_common_code.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/usm_enhance_test_common_code.dir/common_code.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/common_code.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 1/2.1. usm_enhance/common_code.cpp"
+}
+]

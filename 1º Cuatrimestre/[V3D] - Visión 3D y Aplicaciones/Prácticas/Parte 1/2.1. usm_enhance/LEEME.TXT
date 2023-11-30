@@ -1,0 +1,22 @@
+==============================================================================================================================
+                                Práctica 2.1: Realce de la imagen usando la máscara de desenfoque
+                                                Alba Márquez-Rodríguez
+==============================================================================================================================
+
+Partes de la práctica realizadas:
+- fsiv_create_box_filter
+- fsiv_create_gaussian_filter
+- fsiv_combine_images
+- fsiv_usm_enhance
+- Procesar en color (sólo luma)
+- Aplicación con modo interactivo.
+
+Partes de la práctica no realizadas:
+
+Comandos:
+unset GTK_PATH
+build/usm_enhance -f=1 -r=60 -g=1.5 data/radiografia.png output.jpg
+build/usm_enhance -f=1 -r=7 -g=2.0 data/ciclista_original.jpg output.jp
+build/color_balance -i data/paisaje-neutro.jpg output.jpg
+
+Enlace del vídeo: https://www.youtube.com/watch?v=stknQySycfs

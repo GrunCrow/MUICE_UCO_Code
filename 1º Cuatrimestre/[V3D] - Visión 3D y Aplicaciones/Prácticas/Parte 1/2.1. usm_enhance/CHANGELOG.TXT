@@ -1,0 +1,5 @@
+* 1.0
+- Versión inicial desde la versión 1.6 de master.
+* 2.0
+- Versión basada en version 1.7 master.
+
