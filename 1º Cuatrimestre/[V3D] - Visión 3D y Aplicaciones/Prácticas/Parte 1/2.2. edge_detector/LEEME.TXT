@@ -1,0 +1,34 @@
+==============================================================================================================================
+                                               2.2: Detección de bordes
+                                                Alba Márquez-Rodríguez
+==============================================================================================================================
+
+Partes de la práctica realizadas:
+- fsiv_compute_derivate
+- fsiv_compute_gradient_magnitude
+- fsiv_compute_gradient_histogram
+- fsiv_compute_histogram_percentile
+- fsiv_histogram_idx_to_value
+- fsiv_percentile_edge_detector
+- fsiv_otsu_edge_detector
+- fsiv_canny_edge_detector
+- fsiv_compute_confusion_matrix
+- fsiv_compute_sensitivity
+- fsiv_compute_precision
+- fsiv_compute_F1_score
+- Programa principal
+- Modo interactivo (con todos los métodos)
+
+Partes de la práctica no realizadas:
+
+
+Comandos:
+unset GTK_PATH
+build/edge_detector -gt_fname=data/2018_gt.png data/mini-berkely/2018.jpg output.jpg
+build/edge_detector -s_ap=0 -g_r=5 -th=0.8 -th1=0.2 -m=3 -n_bins=100 data/mini-berkely/2018.jpg output.jpg
+build/edge_detector -m=3 -s_ap=0 -g_r=5 -th=0.8 -th1=0.2 -n_bins=100 -c=0.1 data/mini-berkely/2018.jpg output.jpg data/mini-berkely/2018_gt.png 
+build/edge_detector -i data/mini-berkely/2018.jpg output.jpg
+build/edge_detector -i data/mini-berkely/2018.jpg output.jpg data/mini-berkely/2018_gt.png 
+
+
+Enlace del vídeo: https://youtu.be/7rELx3xbGW4
