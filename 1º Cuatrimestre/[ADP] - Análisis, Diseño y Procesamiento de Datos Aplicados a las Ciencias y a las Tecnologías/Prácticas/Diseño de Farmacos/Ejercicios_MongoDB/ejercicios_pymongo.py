@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Editor de Spyder
-
-Este es un archivo temporal.
-"""
-
-
 #####################################################
 # 1- Importar las bibliotecas y realizar la conexión
 #####################################################
