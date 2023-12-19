@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/calibration.dir/calibration.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/calibration.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/calibration.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/1_stereo_calibrate.dir/1_stereo_calibrate.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/1_stereo_calibrate.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/1_stereo_calibrate.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/2_stereo_checkundistorted.dir/2_stereo_checkundistorted.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/2_stereo_checkundistorted.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/2_stereo_checkundistorted.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/3_stereo_disparity.dir/3_stereo_disparity.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/3_stereo_disparity.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/3_stereo_disparity.cpp"
+},
+{
+  "directory": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/build",
+  "command": "/usr/bin/g++  -isystem /usr/include/opencv4 -ggdb3 -O0 -Wall -std=gnu++11 -o CMakeFiles/4_stereo_sparse.dir/4_stereo_sparse.cpp.o -c \"/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/4_stereo_sparse.cpp\"",
+  "file": "/home/osboxes/Desktop/V3D/Prácticas/Parte 2/4.4_par_stereo/4_stereo_sparse.cpp"
+}
+]
