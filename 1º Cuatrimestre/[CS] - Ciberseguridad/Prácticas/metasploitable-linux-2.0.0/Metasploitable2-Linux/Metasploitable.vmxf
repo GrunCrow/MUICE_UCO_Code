@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Foundry>
+<VM>
+<VMId type="string">52 07 23 e7 09 56 d0 46-f5 3f 24 ea 60 6b 6e 2b</VMId>
+<ClientMetaData>
+<clientMetaDataAttributes/>
+<HistoryEventList/></ClientMetaData>
+<vmxPathName type="string">Metasploitable.vmx</vmxPathName></VM></Foundry>
