@@ -74,3 +74,6 @@
 *.java
 *.R
 *.scala
+*.crc
+*.parquet
+*.orc
