@@ -49,6 +49,10 @@ print(marketing_department_boss['ENAME'])
 total_employees_count = database['Employees'].count_documents({})
 print(f"Total de empleados: {total_employees_count}")
 
+# Consulta para obtener la cantidad total de empleados del departamento de IT (ejemplo con DEPTNO = '0')
+it_department_employees_count = database['Employees'].count_documents({"DEPTNO": "0"})
+print(f"Total de empleados del departamento de IT: {it_department_employees_count}")
+
 # Consulta para obtener los empleados cuyo salario sea mayor a 20000
 high_salary_employees = database['Employees'].find({"SAL": {"$gt": 20000}})
 for employee in high_salary_employees:
@@ -68,8 +72,3 @@ for employee in recently_hired_employees:
 boss_employees = database['Employees'].find({"ISBOSS": True})
 for boss in boss_employees:
     print(boss)
-
-# Consulta para obtener los departamentos que tienen al menos un empleado
-departments_with_employees = database['Departments'].find({"DEPTNO": {"$in": [employee['DEPTNO'] for employee in all_employees]}})
-for department in departments_with_employees:
-    print(department)
