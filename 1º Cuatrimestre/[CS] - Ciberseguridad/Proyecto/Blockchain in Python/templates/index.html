@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Server</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #blocks {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        #message {
+            margin-top: 10px;
+            color: green;
+        }
+
+        #add-block {
+            margin-top: 20px;
+        }
+
+        #shutdown {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Blockchain Server</h1>
+        
+        
+        <div id="add-block" class="mb-3">
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <label for="block_data">Enter Block Data:</label>
+                    <input type="text" class="form-control" id="block_data" name="block_data" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Block</button>
+                <!--<button type="button" class="btn btn-danger" onclick="shutDownServer()">Shut Down Server</button>-->
+            </form>
+        </div>
+
+        <div id="message" class="mb-3">{{ message }}</div>
+
+        <div id="blocks">
+            {% for block in blocks %}
+                <div>Index: {{ block.index }}</div>
+                <div>Miner Address: {{ block.miner_address }}</div>
+                <div>Previous Hash: {{ block.previous_hash }}</div>
+                <div>Timestamp: {{ block.timestamp }}</div>
+                <div>Data: {{ block.data }}</div>
+                <div>Current Hash: {{ block.current_hash }}</div>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!--
+    <script>
+        function shutDownServer() {
+            fetch('/shutdown', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Server shutting down...');
+                    } else {
+                        alert('Error while shutting down the server.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during fetch operation:', error);
+                    alert('Error while shutting down the server.');
+                });
+        }
+    </script>
+    -->
+</body>
+</html>
