@@ -1,16 +1,17 @@
-# Alba Márquez Rodríguez
+#Paola Montenegro
+#David Cáceres Gómez
+
 
 from mqtt_as import MQTTClient, config
 import uasyncio as asyncio
 from random import randint
 
-from buzzer import Buzzer
+from time import sleep
 from machine import Pin
+from buzzer import Buzzer
 
-buzzer = Buzzer(34)
 button = Pin(13, Pin.IN, Pin.PULL_UP)
-
-last_v = False
+buzzer = Buzzer(4)
 
 # Ts = 5
 async def messages(client):
@@ -54,45 +55,20 @@ async def sensor(client):
         await asyncio.sleep(2)#Ts
         v = randint(0,100)
         print(f'[CAPA PERCEPCION] v=%d'%(v))
-        await client.publish('grupo 3/N', '%d'%v, qos = 1)
+        await client.publish('grupo1/N', '%d'%v, qos = 1)
 
 
-async def button_function(client):
-    # print('[CAPA PERCEPCIÓN] Sensor iniciado ...')
-    value = 0
-    
-    while True:
-        if button.value() != last_v:
-            if button.value() == True:
-                value = 1
-            else:
-                value = 0
-            await client.publish('grupo 3\boton', '%d'%value, qos = 1)
-            last_v = button.value()
-        await uasyncio.sleep_ms(100)
-
-
-async def buzzer_function(client):
-    # print('[CAPA PERCEPCIÓN] Sensor iniciado ...')
-    async for topic, msg, retained in client.queue:
-    print(f'[CAPA APLICACIÓN] Topic: "{topic.decode()}" Message: "{msg.decode()}" Retained: {retained}')
-    """
-    global Ts
-    if topic.decode() == 'T':
-        Ts = int(msg.decode())
-    elif topic.decode() == 'F':
-        pass
-        
-    """
-    
-    if msg.decode() == '0': # pulsó el botón
-        buzzer.beep(200,1)
-        await uasyncio.sleep_ms(1)
-    else:
-        buzzer.beep_off()
-        await uasyncio.sleep_ms(1)
-                    
-        # await client.publish('grupo 3/N', '%d'%v, qos = 1)        
+async def boton(client):
+    valor = 0;
+    while True: 
+        if button.value() == True:
+            valor = 1;
+            await client.publish('grupo1/boton', '%d'%valor, qos = 1)      
+            await asyncio.sleep(1)
+        else:
+            valor = 0;
+            await client.publish('grupo1/boton', '%d'%valor, qos = 1)
+            await asyncio.sleep(1)
 
 
 async def main(client):
@@ -107,7 +83,8 @@ async def main(client):
         asyncio.create_task(task(client))
         
     # crear aquí las tareas que sean necesarias
-    await button_function(client) 
+    #await sensor(client)
+    await boton(client)
     
 if __name__ == '__main__':
     
@@ -122,7 +99,7 @@ if __name__ == '__main__':
     config['will'] = ('topic_final', 'Mensaje de finalizacion', False, 0)
 
     # suscripciones
-    SUBS = ("grupo 3/boton")
+    SUBS = ('grupo2/boton', )
 
     # configuración y creación de la clase cliente
     MQTTClient.DEBUG = True

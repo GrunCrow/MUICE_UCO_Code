@@ -5,6 +5,8 @@
 # Pyboard D support added also RP2/default
 # Various improvements contributed by Kevin Köck.
 
+# Alba Márquez Rodríguez
+
 import gc
 import usocket as socket
 import ustruct as struct
