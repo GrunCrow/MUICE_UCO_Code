@@ -64,6 +64,6 @@ class Blockchain:
         return True
     
     def select_miner(self):
-        # Simple PoS mechanism: Randomly select a miner from the current participants
-        participants = ["Local Miner", "Server Miner"]  # Add your participant addresses
+        # Simple consensus mechanism: Randomly select a miner from the current participants
+        participants = ["Local Miner", "Server Miner"]  # Add more participant addresses if needed
         return random.choice(participants)
