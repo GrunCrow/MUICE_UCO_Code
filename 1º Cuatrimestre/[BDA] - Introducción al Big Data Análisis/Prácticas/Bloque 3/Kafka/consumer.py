@@ -30,9 +30,12 @@ import ccloud_lib
 if __name__ == '__main__':
 
     # Read arguments and configurations and initialize
-    args = ccloud_lib.parse_args()
-    config_file = args.config_file
-    topic = args.topic
+    # args = ccloud_lib.parse_args()
+    #config_file = args.config_file
+    #topic = args.topic
+    config_file = "python.cfg"
+    topic = "Alba"
+    
     conf = ccloud_lib.read_ccloud_config(config_file)
 
     # Create Consumer instance
@@ -56,7 +59,7 @@ if __name__ == '__main__':
                 # Initial message consumption may take up to
                 # `session.timeout.ms` for the consumer group to
                 # rebalance and start consuming
-                print("Waiting for message or event/error in poll()")
+                # print("Waiting for message or event/error in poll()")
                 continue
             elif msg.error():
                 print('error: {}'.format(msg.error()))
@@ -64,12 +67,14 @@ if __name__ == '__main__':
                 # Check for Kafka message
                 record_key = msg.key()
                 record_value = msg.value()
-                data = json.loads(record_value)
-                count = data['count']
-                total_count += count
-                print("Consumed record with key {} and value {}, \
-                      and updated total count to {}"
-                      .format(record_key, record_value, total_count))
+                data = str(record_value)
+                # count = data['count']
+                # total_count += count
+                # print("Consumed record with key {} and value {}, \
+                      # and updated total count to {}"
+                      # .format(record_key, record_value, total_count))
+                      
+                print(data)
     except KeyboardInterrupt:
         pass
     finally:

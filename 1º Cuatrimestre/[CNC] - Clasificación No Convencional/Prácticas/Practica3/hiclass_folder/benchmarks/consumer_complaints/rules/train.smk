@@ -1,0 +1,30 @@
+rule train:
+    input:
+        x_train = "results/split_data/x_train.csv.zip",
+        y_train = "results/split_data/y_train.csv.zip",
+        best_parameters = "results/{model}/{classifier}/optimization_results.yaml",
+    output:
+        trained_model = "results/{model}/{classifier}/trained_model.sav",
+        benchmark = "results/{model}/{classifier}/training_benchmark.txt"
+    params:
+        classifier = "{classifier}",
+        model = "{model}",
+    conda:
+        "../envs/hiclass.yml"
+    threads:
+        config["threads"]
+    resources:
+        mem_gb = config["mem_gb"]
+    shell:
+        """
+        /usr/bin/time -v \
+        -o {output.benchmark} \
+        python scripts/train.py \
+        --n-jobs {threads} \
+        --x-train {input.x_train} \
+        --y-train {input.y_train} \
+        --trained-model {output.trained_model} \
+        --classifier {params.classifier} \
+        --model {params.model} \
+        --best-parameters {input.best_parameters}
+        """

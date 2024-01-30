@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+networkx = "*"
+numpy = "*"
+scikit-learn = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-flake8 = "*"
+pytest-pydocstyle = "*"
+pytest-cov = "*"
+twine = "*"
+sphinx = "4.1.1"
+sphinx-rtd-theme = "0.5.2"
+
+[extras]
+ray = "*"

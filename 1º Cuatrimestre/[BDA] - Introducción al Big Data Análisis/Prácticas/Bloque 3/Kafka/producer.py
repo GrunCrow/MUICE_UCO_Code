@@ -30,9 +30,11 @@ import ccloud_lib
 if __name__ == '__main__':
 
     # Read arguments and configurations and initialize
-    args = ccloud_lib.parse_args()
-    config_file = args.config_file
-    topic = args.topic
+    # args = ccloud_lib.parse_args()
+    # config_file = args.config_file
+    # topic = args.topic
+    config_file = "python.cfg"
+    topic = "bda_messages"
     conf = ccloud_lib.read_ccloud_config(config_file)
 
     # Create Producer instance
@@ -67,15 +69,32 @@ if __name__ == '__main__':
         # p.poll() serves delivery reports (on_delivery)
         # from previous produce() calls.
         producer.poll(0)'''
-        
-    record_key = "alba"
-    record_value = json.dumps({'holiwi': n})
-    print("Producing record: {}\t{}".format(record_key, record_value))
-    producer.produce(topic, key=record_key, value=record_value, on_delivery=acked)
-    # p.poll() serves delivery reports (on_delivery)
-    # from previous produce() calls.
-    producer.poll(0)
+    
+    record_key = "Alba"
+    
+    msg = input("Write your message: ")
+    
+    try:
+        while msg != "exit":
+            
+            words = msg.split()
+            
+            new_msg = "De " + record_key + " para " + words[0].replace(":","") + ":" + " ".join(words[1:])
+            
+            producer.produce(topic, key=record_key, value=new_msg, on_delivery=acked)
+                
+            '''record_key = "Alba"
+            record_value = json.dumps({'holiwi'})
+            print("Producing record: {}\t{}".format(record_key, record_value))
+            producer.produce(topic, key=record_key, value=record_value, on_delivery=acked)'''
+            # p.poll() serves delivery reports (on_delivery)
+            # from previous produce() calls.
+            producer.poll(0)
+            
+            msg = input("Write your message: ")
 
-    producer.flush()
+        producer.flush()
+    except KeyboardInterrupt:
+        pass
 
     print("{} messages were produced to topic {}!".format(delivered_records, topic))
