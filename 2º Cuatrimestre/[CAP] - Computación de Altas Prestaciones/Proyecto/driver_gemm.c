@@ -1,8 +1,12 @@
+// gcc driver_gemm.c -o driver_gemm
+// driver_gemm
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <sys/time.h>
 #include <stdint.h>
+#include <xmmintrin.h> // SSE
 
 //Definitions
 #define DT float
@@ -25,12 +29,26 @@ double validate_multiplication(DT *, DT *, size_t, size_t);
 
 void gemm_op(DT *A, DT *B, DT *C, size_t M, size_t N, size_t K) {
     size_t m, n, k;
-    DT aux;
-    for (m = 0; m < M; m++)  
-    for (k = 0; k < K; k++) {
-        aux = A[m*K + k];
-        for (n = 0; n < N; n++)
-            C[m*N + n] += aux * B[k*N + n];
+
+    // Bucle externo para las filas de la matriz A
+    for (m = 0; m < M; m++) {
+        // Variables locales para almacenar elementos de A y C
+        DT aux_A;
+        DT *ptr_C = C + m * N; // Puntero a la fila m de la matriz C
+
+        // Bucle interno para las columnas de la matriz B
+        for (k = 0; k < K; k++) {
+            aux_A = A[m * K + k]; // Almacenar el elemento de A en una variable local
+            __m128 a = _mm_set1_ps(aux_A); // Cargar el elemento de A en un registro SIMD
+
+            // Bucle interno para las filas de la matriz B y las columnas de la matriz C
+            for (n = 0; n < N; n += 4) {
+                __m128 b = _mm_loadu_ps(&B[k * N + n]); // Cargar 4 elementos de B en un registro SIMD
+                __m128 c = _mm_loadu_ps(&ptr_C[n]); // Cargar 4 elementos de C en un registro SIMD
+                __m128 result = _mm_add_ps(c, _mm_mul_ps(a, b)); // Realizar multiplicación y suma SIMD
+                _mm_storeu_ps(&ptr_C[n], result); // Almacenar el resultado de vuelta en C
+            }
+        }
     }
 }
 
