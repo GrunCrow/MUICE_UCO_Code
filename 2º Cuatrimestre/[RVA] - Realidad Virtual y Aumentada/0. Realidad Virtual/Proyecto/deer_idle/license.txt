@@ -1,0 +1,11 @@
+Model Information:
+* title:	Deer Idle
+* source:	https://sketchfab.com/3d-models/deer-idle-c80f3de2e24542e1a8e578f832c6211c
+* author:	kenchoo (https://sketchfab.com/kenchoo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Deer Idle" (https://sketchfab.com/3d-models/deer-idle-c80f3de2e24542e1a8e578f832c6211c) by kenchoo (https://sketchfab.com/kenchoo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

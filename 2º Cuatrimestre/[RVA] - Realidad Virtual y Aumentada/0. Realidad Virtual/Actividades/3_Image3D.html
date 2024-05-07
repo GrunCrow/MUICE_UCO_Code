@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <!-- Alba Márquez-Rodríguezz -->
+          
+        <!-- Tarea -->
+        <a-assets>
+            <img id="img_1" src="images/image1.jpg">
+            <img id="img_2" src="images/image2.jpg">
+            <img id="img_3" src="images/image3.jpg">
+            <img id="img_4" src="images/image4.jpg">
+            <img id="img_5" src="images/image5.jpg">
+                    
+        </a-assets>
+  
+        <a-box 
+          color="red" 
+          opacity="0.5" 
+          width="3" 
+          height="0.1" 
+          depth="3" 
+          position="0 1.5 -1.5">
+        </a-box>  
+
+          <!--<a-image position="-1 1.5 -3" width="1" height="0.75"  src="#mar_img" scale="1.024 1.024 1"> </a-image>   -->    
+        <a-image 
+          position="0 1.5 -3" 
+          width="1" 
+          height="0.75"  
+          scale="3 3 3" 
+          src="#img_1" >
+        </a-image>
+
+        <a-curvedimage 
+          position="0 1.5 0"  
+          src="#img_2" 
+          scale="3 3 3" 
+          height="0.833"  
+          width="1" 
+          theta-length="90" 
+          radius="0.707" 
+          theta-start="135"> 
+        </a-curvedimage>
+        
+        <a-curvedimage 
+          position="0 1.5 0"  
+          src="#img_3" 
+          scale="3 3 3"  
+          height="0.327"  
+          theta-length="50" 
+          radius="0.5" 
+          theta-start="155">
+        </a-curvedimage>
+
+        <a-curvedimage 
+          position="0 1.5 0"  
+          src="#img_4"   
+          scale="3 3 3"  
+          height="0.327"  
+          theta-length="50" 
+          radius="0.5" 
+          theta-start="220"> 
+        </a-curvedimage>
+
+        <a-curvedimage 
+        position="0 1.5 0"  
+        src="#img_5"  
+        scale="3 3 3"  
+        height="0.327"  
+        theta-length="50" 
+        radius="0.5" 
+        theta-start="90">
+      </a-curvedimage>                   
+      
+    </a-scene>
+  </body>
+</html>

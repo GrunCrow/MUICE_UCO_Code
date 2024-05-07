@@ -1,12 +1,27 @@
+/*===============================================================================================
+
+                      PROYECTO DE LA ASIGNATURA COMPUTACIÓN DE ALTAS PRESTACIONES
+
+                                      Alba Márquez Rodríguez
+                                      Paola Montenegro Cantos
+
+================================================================================================*/
+
 // gcc driver_gemm.c -o driver_gemm
 // driver_gemm
 
+// Número de hilos: 2
+// Matrices almacenadas por filas
+
+
+// Libraries
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <sys/time.h>
 #include <stdint.h>
 #include <xmmintrin.h> // SSE
+#include <omp.h> // Parallelization
 
 //Definitions
 #define DT float
@@ -27,30 +42,38 @@ void gemm_base(DT *, DT *, DT *, size_t, size_t, size_t);
 double dclock();
 double validate_multiplication(DT *, DT *, size_t, size_t);
 
+//Optimized GEMM
 void gemm_op(DT *A, DT *B, DT *C, size_t M, size_t N, size_t K) {
-    size_t m, n, k;
-
-    // Bucle externo para las filas de la matriz A
-    for (m = 0; m < M; m++) {
-        // Variables locales para almacenar elementos de A y C
-        DT aux_A;
-        DT *ptr_C = C + m * N; // Puntero a la fila m de la matriz C
-
-        // Bucle interno para las columnas de la matriz B
-        for (k = 0; k < K; k++) {
-            aux_A = A[m * K + k]; // Almacenar el elemento de A en una variable local
-            __m128 a = _mm_set1_ps(aux_A); // Cargar el elemento de A en un registro SIMD
-
-            // Bucle interno para las filas de la matriz B y las columnas de la matriz C
-            for (n = 0; n < N; n += 4) {
-                __m128 b = _mm_loadu_ps(&B[k * N + n]); // Cargar 4 elementos de B en un registro SIMD
-                __m128 c = _mm_loadu_ps(&ptr_C[n]); // Cargar 4 elementos de C en un registro SIMD
-                __m128 result = _mm_add_ps(c, _mm_mul_ps(a, b)); // Realizar multiplicación y suma SIMD
-                _mm_storeu_ps(&ptr_C[n], result); // Almacenar el resultado de vuelta en C
-            }
-        }
+  __m128 a_row, b_row, c_row, c_tmp;
+  for (size_t i = 0; i < M; i++) {
+    for (size_t j = 0; j < N; j++) {
+      c_row = _mm_setzero_ps(); // Inicializar el registro SSE de salida a cero
+      size_t k = 0;
+      for (; k < K - 3; k += 4) {
+        // Cargar un elemento de 'A' y un elemento de 'B' en registros SSE
+        a_row = _mm_loadu_ps(&A[i*K+k]);
+        b_row = _mm_loadu_ps(&B[k*N+j]);
+        // Realizar la multiplicación de matriz por matriz y acumular en 'c_row'
+        c_tmp = _mm_mul_ps(a_row, b_row);
+        c_row = _mm_add_ps(c_row, c_tmp);
+      }
+      // Procesar los elementos restantes
+      for (; k < K; k++) {
+        a_row = _mm_set1_ps(A[i*K+k]);
+        b_row = _mm_set1_ps(B[k*N+j]);
+        c_tmp = _mm_mul_ps(a_row, b_row);
+        c_row = _mm_add_ps(c_row, c_tmp);
+      }
+      // Sumar el resultado a la matriz de salida 'C'
+      C[i*N + j] += ((DT*)&c_row)[0];
     }
+  }
 }
+
+
+
+
+
 
 //Main program
 int main() {
@@ -159,12 +182,22 @@ int main() {
 
 //Auxiliar functions
 void gemm_base(DT *A, DT *B, DT *C, size_t M, size_t N, size_t K) {
-    size_t m, n, k;
-
-    for (m = 0; m < M; m++) 
-    for (n = 0; n < N; n++)
-    for (k = 0; k < K; k++)
-        C[m*N + n] += A[m*K + k] * B[k*N + n];
+  __m128 a_row, b_row, c_row, c_tmp;
+  for (size_t i = 0; i < M; i++) {
+    for (size_t j = 0; j < N; j++) {
+      c_row = _mm_setzero_ps(); // Inicializar el registro SSE de salida a cero
+      for (size_t k = 0; k < K; k++) {
+        // Cargar un elemento de 'A' y un elemento de 'B' en registros SSE
+        a_row = _mm_set1_ps(A[i*K+k]);
+        b_row = _mm_set1_ps(B[k*N+j]);
+        // Realizar la multiplicación de matriz por matriz y acumular en 'c_row'
+        c_tmp = _mm_mul_ps(a_row, b_row);
+        c_row = _mm_add_ps(c_row, c_tmp);
+      }
+      // Sumar el resultado a la matriz de salida 'C'
+      C[i*N + j] += ((DT*)&c_row)[0];
+    }
+  }
 }
 
 

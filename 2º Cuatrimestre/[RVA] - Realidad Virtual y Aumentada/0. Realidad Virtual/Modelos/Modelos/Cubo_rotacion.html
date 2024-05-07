@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+    
+    <a-assets>
+          
+        <img id="floor-texture" src="ImageTextures/TexturesCom_CrackedPavementA_1K_albedo.jpg">
+        <img id="floor-normal" src="ImageTextures/TexturesCom_CrackedPavementA_1K_normal.jpg">    
+        
+        <img id="cloudy-texture" src="ImageTextures/TexturesCom_Skies0389_1_M.jpg">
+        <img id="sky-texture" src="ImageTextures/sunny-sky_2048x1365.jpg">    
+        <img id="familia" src="ImageTextures/famiia.jpg">    
+
+    </a-assets>
+
+    <a-plane  rotation="-90 0 0"  scale="5 5 1"  
+             material="color:#FFFFFF;
+                       src:#floor-texture;
+                       repeat:5 5;
+                       Shader: flat;
+                       normal-map:#floor-normal;
+                       normal-texture-repeat: 5 5;">
+
+                      </a-plane>
+   
+                      <a-box 
+                        color="#AA0000" 
+                        size=2  
+                        position="0 0.5 0" 
+                        animation="property:rotation; to:0 360 0; loop:true;easing:linear;">
+
+                        <a-entity><a-box position="0 2 0" color="#00AA00"> </a-box></a-entity>  
+
+                      </a-box>
+                      
+                                          
+                      <a-entity position="0 0 8" active="true"><a-camera></a-camera></a-entity>
+   </a-scene>
+
+  </body>
+</html>
+

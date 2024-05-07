@@ -1,0 +1,11 @@
+Model Information:
+* title:	Catapult
+* source:	https://sketchfab.com/3d-models/catapult-e28ba77051ab4cff9a90923ed7ef2294
+* author:	Arnau Rocher Alcayde (https://sketchfab.com/ArnauRocherAlcayde)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Catapult" (https://sketchfab.com/3d-models/catapult-e28ba77051ab4cff9a90923ed7ef2294) by Arnau Rocher Alcayde (https://sketchfab.com/ArnauRocherAlcayde) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

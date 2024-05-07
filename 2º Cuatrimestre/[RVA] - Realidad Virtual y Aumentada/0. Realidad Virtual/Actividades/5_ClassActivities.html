@@ -1,0 +1,76 @@
+<html>
+    <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+        
+        <!-- Alba Márquez-Rodríguezz -->
+        
+        <!-- Actividades de Clase (Día 4) -->
+
+        <a-assets>
+            <img id="floor" src="ImageTextures/TexturesCom_CrackedPavementA_1K_albedo.jpg">
+            <img id="floor-normal" src="ImageTextures/TexturesCom_CrackedPavementA_1K_normal.jpg">
+            <img id="clear-sky" src="ImageTextures/sky.jpg">
+            <img id="cloudy-sky" src="ImageTextures/TexturesCom_Skies0389_1_M.jpg">
+            <img id="panorama" src="Images/panorama360.jpg">
+            <img id="family" src="Images/test.jpg">
+        </a-assets>
+
+        <a-plane
+            material = "color:#FFFFFF;
+                        src: #floor;
+                        repeat: 5000 5000;
+                        normal-map: #floor-normal;
+                        normal-texture-repeat: 5000 5000
+                        roughness: 0.2;"
+            rotation="-90 0 0"
+            scale="5 5 1"
+        ></a-plane>
+
+        <!-- Define a red cylinder (radius=0.5, height=2 and X=-2). -->
+        <a-cylinder
+            material = "color:#FF0000;"
+            radius="0.5"
+            height="2"
+            position="-2 1 0"
+        ></a-cylinder>
+
+        <!-- Define a green box (height=2, depth=4 and X=2). -->
+        <a-box
+            material = "color:#00FF00;"
+            height="2"
+            depth="4"
+            position="2 1 0"
+        ></a-box>
+
+        <a-image
+            src="#family"
+            scale="2 2 1"
+            position="0 1 0"
+        >
+        </a-image>
+
+        <a-entity 
+            position="0 0 5"”>
+            <a-camera 
+                active="true">
+            </a-camera>
+        </a-entity>
+
+        <a-entity 
+            position="0 5 5">
+            <a-camera 
+                active="false">
+            </a-camera>
+        </a-entity>
+
+        <a-sky
+            material = "color:#FFFFFF;
+                        src: #clear-sky;"
+        ></a-sky>
+        
+        </a-scene>
+    </body>
+</html>

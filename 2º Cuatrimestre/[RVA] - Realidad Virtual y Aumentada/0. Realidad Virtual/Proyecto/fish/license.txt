@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fish
+* source:	https://sketchfab.com/3d-models/fish-c4328d6c1ae445198abc1a3d4c1e2570
+* author:	Yimit (https://sketchfab.com/yimit)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fish" (https://sketchfab.com/3d-models/fish-c4328d6c1ae445198abc1a3d4c1e2570) by Yimit (https://sketchfab.com/yimit) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

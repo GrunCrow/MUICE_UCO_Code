@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-extras@^6.1.1/dist/aframe-extras.min.js"></script>
+    </head>
+    <body>
+
+        <!--
+            Scene of the nature. Made based on models for the background which is a forest and then for
+            each of the animals that are in the scene. The birds are flying in the sky, the deer is walking
+            and the fish is swimming. The camera is placed in a position where it can see all the animals.
+
+            The scene is animated with the use of the animation property of the a-frame library. The birds
+            are moving on the X and Z axis, the deer is moving on the X axis and the fish is moving on the Z
+            axis. The camera is static and the light is moving on the X axis.
+
+            The scene is made with the use of the a-frame library and the models have been downloaded. 
+            The models are imported in the scene with the use of the gltf-model property of
+            the a-frame library. The models are animated with the use of the animation-mixer property of
+            the a-frame library.
+
+            This kind of 3D representations can be used for people that want to relax and enjoy the nature,
+            but they can't go outside.
+        -->
+
+        <a-scene>
+            <a-assets>
+                <a-asset-item id="forest" src="vibrant_forest/scene.gltf"></a-asset-item> 
+                <a-asset-item id="birds" src="birds/scene.gltf"></a-asset-item>      
+                <a-asset-item id="deer" src="deer_idle/scene.gltf"></a-asset-item>
+                <a-asset-item id="fish" src="fish/scene.gltf"></a-asset-item>
+                <img id="sky" src="Images/sky.jpg">
+            </a-assets>
+
+            <!-- Sky -->
+            <a-sky 
+                material="color:#FFFFFF; src: #sky;"
+                rotation="0 0 -50"
+                >
+            </a-sky>
+
+            <!-- Light at the sunrise color-->
+            <a-light 
+                type="directional" 
+                color="#EED7CC"
+                intensity="2" 
+                position="2.5 0.5 -0.5" 
+                castShadow="true"
+                animation="property: position; to: 2 3 -1; dur: 10000; easing: linear; loop: false"
+                >
+            </a-light>
+
+            <a-curve id="path">
+                <a-curve-point position="0 0 0"></a-curve-point>
+                <a-curve-point position="0 0.2 0"></a-curve-point>
+                <a-curve-point position="-1 0 0"></a-curve-point>
+            </a-curve>
+            
+            <!-- Forest Model -->
+            <a-entity 
+                gltf-model="#forest"
+                shadow="cast: true; receive: true">
+                >
+                <!-- Birds 1: Move on exe X -->
+                <a-entity 
+                    gltf-model="#birds"
+                    position="1 0 0"
+                    rotation="0 90 0"
+                    scale="0.1 0.1 0.1"
+                    animation-mixer="clip: *; loop: true"
+                    animation="property: position; to: -5 0 0; dur: 70000; easing: linear; loop: false"
+                    >
+                </a-entity>
+                <!-- Birds 2: Move on axis Z with a delay of 5 seconds -->
+                <a-entity 
+                    gltf-model="#birds"
+                    position="0.7 0 1"
+                    rotation="0 0 0"
+                    scale="0.2 0.2 0.2"
+                    animation-mixer="clip: *; loop: true"
+                    animation="property: position; to: 0 0 -2; dur: 20000; easing: linear; loop: false; delay: 10000"
+                >
+                </a-entity>
+                <!-- Deer delay + going foward and stopping in front of the camera-->
+                <a-entity 
+                    gltf-model="#deer"
+                    position="-0.5 -0.25 -0.2"
+                    rotation="0 90 0"
+                    scale="0.05 0.05 0.05"
+                    animation-mixer="clip: *; loop: true"
+                    animation="property: position; to: 0.5 -0.25 -0.2; dur: 12000; easing: linear; loop: false; delay: 10000"
+                >
+                </a-entity>
+
+                <!-- Fish -->
+                <a-entity 
+                    gltf-model="#fish"
+                    position="-0.7 -0.23 -0.15"
+                    rotation="0 -10 0"
+                    scale="0.007 0.007 0.007"
+                    animation-mixer="clip: *; loop: true"
+                    animation="property: position; to: 1 -0.23 0.15; dur: 24000; easing: linear; loop: false; delay: 3000"
+                >
+                </a-entity>
+            </a-entity>
+            
+            <!-- Camera -->
+            <a-entity position="1 -1.8 0.2" rotation="0 90 0">
+                <a-camera></a-camera>
+            </a-entity>
+            
+            <!-- Bird - manual -->
+            <!--
+            <a-entity id="bird1" bird="birdTexture: #birdTexture; speed: 0.5; position: 0 0 0;"></a-entity>
+            -->
+            
+        </a-scene>
+    </body>
+</html>

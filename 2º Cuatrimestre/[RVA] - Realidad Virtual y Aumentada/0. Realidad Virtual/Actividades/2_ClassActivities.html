@@ -1,0 +1,119 @@
+<html>
+    <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+        
+        <!-- Alba Márquez-Rodríguezz -->
+        
+        <!-- Actividades de Clase (Día 2) -->
+
+        <!-- Tarea en las dos últimas cajas (las que están más a la derecha) -->
+        
+        <!-- Light Blue Cube -->
+        <a-box
+            scale="4 4 4"
+            size="4"
+            position="-2 1.5 -9"
+            color="#ADD8E6"
+            src="ImageTextures/sky.jpg"
+            material="#00FFFF"
+            repeat="1 1"
+            normal-map="ImageTextures/TexturesCom_Metal_Corrugated_1K_normal.jpg"
+            >
+        </a-box>
+
+        <a-assets>
+            <img id="pavement-texture" src="ImageTextures/TexturesCom_Metal_Corrugated_1K_albedo.jpg">
+            <img id="pavement-normal" src="ImageTextures/TexturesCom_Metal_Corrugated_1K_normal.jpg">
+            <img id="brick-texture" src="ImageTextures/TexturesCom_Wall_BrickPlain3_2.5x2.5_B_1K_ALBEDO.jpg">
+            <img id="brick-normal" src="ImageTextures/TexturesCom_Wall_BrickPlain3_2.5x2.5_B_1K_normal.jpg">
+        </a-assets>
+
+        <!-- Brown cube -->
+        <a-box
+            scale="4 4 4"
+            size="4"
+            src="#pavement-texture"
+            normal-map="#pavement-normal"
+            position="2 1.5 -9"
+            color="#964B00"
+            normal-texture-repeat="1 1"
+            >
+        </a-box>
+
+        <a-box
+            scale="4 4 4"
+            size="4"
+            src="#pavement-texture"
+            normal-map="#pavement-normal"
+            position="6 1.5 -9"
+            color="#964B00"
+            normal-texture-repeat="1 1"
+            normal-scale="1 -1"
+            >
+        </a-box>
+
+        <a-box
+            scale="4 4 4"
+            size="4"
+            src="#pavement-texture"
+            normal-map="#pavement-normal"
+            position="10 1.5 -9"
+            color="#964B00"
+            normal-texture-repeat="1 1"
+            normal-scale="1 -1"
+            roughness="0.1"
+            >
+        </a-box>
+
+        <a-box
+            scale="4 4 4"
+            size="4"
+            src="#pavement-texture"
+            normal-map="#pavement-normal"
+            position="14 1.5 -9"
+            color="#964B00"
+            normal-texture-repeat="1 1"
+            normal-scale="1 -1"
+            roughness="0.9"
+            >
+            <!-- Blue sphere in the box with low roghtness -->
+            <a-sphere
+                scale="0.5 0.5 0.5"
+                position="0 0 0"
+                color="#0000FF"
+                shader="flat"
+                roughness="0.1"
+                material="color:#0000FF; roughtness:0.2; shader:flat; opacity:0.5"
+                >
+            </a-sphere>
+        </a-box>
+
+        <a-box
+            scale="4 4 4"
+            size="4"
+            src="#brick-texture"
+            normal-map="#brick-normal"
+            position="18 1.5 -9"
+            color="#FFEEEE"
+            repeat="2 2"
+            normal-scale="1 -1"
+            roughness="0.9"
+            >
+            <!-- Red sphere in the box with low roghtness -->
+            <a-sphere
+                scale="0.5 0.5 0.5"
+                position="0 0 0"
+                color="#FF0000"
+                roughness="0.1"
+                shader="standard"
+                >
+            </a-sphere>
+        </a-box>
+
+        
+        </a-scene>
+    </body>
+</html>
