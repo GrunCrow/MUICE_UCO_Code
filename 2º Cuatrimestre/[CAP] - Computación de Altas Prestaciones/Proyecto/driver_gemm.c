@@ -43,31 +43,23 @@ double dclock();
 double validate_multiplication(DT *, DT *, size_t, size_t);
 
 //Optimized GEMM
+//un registro para la columna de a , 4 registros para b  y  4 registros para c, cargados por filas
 void gemm_op(DT *A, DT *B, DT *C, size_t M, size_t N, size_t K) {
-  __m128 a_row, b_row, c_row, c_tmp;
-  for (size_t i = 0; i < M; i++) {
-    for (size_t j = 0; j < N; j++) {
-      c_row = _mm_setzero_ps(); // Inicializar el registro SSE de salida a cero
-      size_t k = 0;
-      for (; k < K - 3; k += 4) {
-        // Cargar un elemento de 'A' y un elemento de 'B' en registros SSE
-        a_row = _mm_loadu_ps(&A[i*K+k]);
-        b_row = _mm_loadu_ps(&B[k*N+j]);
-        // Realizar la multiplicación de matriz por matriz y acumular en 'c_row'
-        c_tmp = _mm_mul_ps(a_row, b_row);
-        c_row = _mm_add_ps(c_row, c_tmp);
-      }
-      // Procesar los elementos restantes
-      for (; k < K; k++) {
-        a_row = _mm_set1_ps(A[i*K+k]);
-        b_row = _mm_set1_ps(B[k*N+j]);
-        c_tmp = _mm_mul_ps(a_row, b_row);
-        c_row = _mm_add_ps(c_row, c_tmp);
-      }
-      // Sumar el resultado a la matriz de salida 'C'
-      C[i*N + j] += ((DT*)&c_row)[0];
+    size_t m, n, k;
+    for (m = 0; m < M; m++) {
+        for (k = 0; k < K; k++) {
+            __m128 a_vec_1 = _mm_set1_ps(A[m * K + k]); // Carga un valor de 'A' en un registro SIMD
+          
+            for (n = 0; n < N ; n += 4) {
+                __m128 b_vec_1 = _mm_load_ps(&B[k * N + n]); // Carga 4 valores de 'B' en un registro SIMD
+                __m128 c_vec_1 = _mm_load_ps(&C[m * N + n]); // Carga 4 valores de 'C' en un registro SIMD
+                // Multiplica los valores en 'a_vec' y 'b_vec' y almacena el resultado en 'c_vec'
+                c_vec_1 = _mm_add_ps(c_vec_1,_mm_mul_ps(a_vec_1, b_vec_1));
+                _mm_store_ps(&C[m * N + n], c_vec_1); // Almacena los valores en 'c_vec' de vuelta en 'C'
+
+            }
+        }
     }
-  }
 }
 
 
